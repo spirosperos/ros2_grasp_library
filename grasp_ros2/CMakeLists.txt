@@ -61,7 +61,7 @@ find_path(gpd_INCLUDE_DIRS gpd/grasp_detector.h)
 
 
 # PCL
-find_package(PCL 1.10.0 EXACT)
+find_package(PCL 1.12.1 EXACT)
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
