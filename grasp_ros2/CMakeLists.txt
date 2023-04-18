@@ -59,7 +59,7 @@ find_path(gpd_INCLUDE_DIRS gpd/grasp_detector.h)
 
 
 # PCL
-find_package(PCL REQUIRED)
+find_package(PCL 1.12.1 REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -113,6 +113,7 @@ target_link_libraries(${libgrasp_detect}
   ${gpd_LIBRARIES}
   ${PCL_LIBRARIES}
   ${OpenCV_LIBS}
+  ${pcl_conversions_LIBRARIES}
 )
 rclcpp_components_register_nodes(${libgrasp_detect} "grasp_ros2::GraspDetectorGPD")
 set(node_plugins "${node_plugins}grasp_ros2::GraspDetectorGPD;$<TARGET_FILE:${libgrasp_detect}>\n")
