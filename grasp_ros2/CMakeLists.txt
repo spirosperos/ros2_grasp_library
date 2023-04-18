@@ -73,9 +73,7 @@ include_directories(
   ${grasp_msgs_INCLUDE_DIRS}
   ${sensor_msgs_INCLUDE_DIRS}
   ${moveit_msgs_INCLUDE_DIRS}
-if(BUILD_RECOGNIZE_PICK STREQUAL "ON")
   ${people_msgs_INCLUDE_DIRS}
-endif
   ${tf2_geometry_msgs_INCLUDE_DIRS}
   ${trajectory_msgs_INCLUDE_DIRS}
   ${visualization_msgs_INCLUDE_DIRS}
