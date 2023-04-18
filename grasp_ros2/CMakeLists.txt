@@ -61,7 +61,7 @@ find_path(gpd_INCLUDE_DIRS gpd/grasp_detector.h)
 
 
 # PCL
-find_package(PCL 1.12.1 EXACT)
+find_package(PCL COMPONENT REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
@@ -245,5 +245,5 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
   add_subdirectory(tests)
 endif()
-
+ament_export_include_directories(include)
 ament_package()
