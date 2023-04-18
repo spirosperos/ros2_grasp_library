@@ -40,7 +40,7 @@ find_package(rclcpp_components REQUIRED)
 find_package(grasp_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(moveit_msgs)
-find_package(people_msgs)
+#find_package(people_msgs)
 find_package(visualization_msgs)
 find_package(tf2)
 find_package(tf2_ros REQUIRED)
@@ -71,7 +71,7 @@ include_directories(
   ${grasp_msgs_INCLUDE_DIRS}
   ${sensor_msgs_INCLUDE_DIRS}
   ${moveit_msgs_INCLUDE_DIRS}
-  ${people_msgs_INCLUDE_DIRS}
+  #${people_msgs_INCLUDE_DIRS}
   ${tf2_geometry_msgs_INCLUDE_DIRS}
   ${trajectory_msgs_INCLUDE_DIRS}
   ${visualization_msgs_INCLUDE_DIRS}
@@ -102,11 +102,11 @@ target_compile_definitions(${libgrasp_detect}
   "visualization_msgs"
 )
 
-if(BUILD_RECOGNIZE_PICK STREQUAL "ON")
-  ament_target_dependencies(${libgrasp_detect}
-    "people_msgs"
-  )
-endif()
+#if(BUILD_RECOGNIZE_PICK STREQUAL "ON")
+#  ament_target_dependencies(${libgrasp_detect}
+#    "people_msgs"
+#  )
+#endif()
 
 target_link_libraries(${libgrasp_detect}
   ${gpg_LIBRARIES}
