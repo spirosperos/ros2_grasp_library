@@ -64,6 +64,9 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
+# VTK
+find_package(VTK REQUIRED)
+
 include_directories(
   include
   ${rclcpp_INCLUDE_DIRS}
@@ -79,6 +82,7 @@ include_directories(
   ${tf2_INCLUDE_DIRS}
   ${gpg_INCLUDE_DIRS}
   ${gpd_INCLUDE_DIRS}
+  ${VTK_USE_FILE}
 )
 
 # create ament index resource which references the libraries in the binary dir
@@ -114,6 +118,7 @@ target_link_libraries(${libgrasp_detect}
   ${PCL_LIBRARIES}
   ${OpenCV_LIBS}
   ${pcl_conversions_LIBRARIES}
+  ${VTK_LIBRARIES}
 )
 rclcpp_components_register_nodes(${libgrasp_detect} "grasp_ros2::GraspDetectorGPD")
 set(node_plugins "${node_plugins}grasp_ros2::GraspDetectorGPD;$<TARGET_FILE:${libgrasp_detect}>\n")
