@@ -117,7 +117,6 @@ target_link_libraries(${libgrasp_detect}
 )
 rclcpp_components_register_nodes(${libgrasp_detect} "grasp_ros2::GraspDetectorGPD")
 set(node_plugins "${node_plugins}grasp_ros2::GraspDetectorGPD;$<TARGET_FILE:${libgrasp_detect}>\n")
-dfgdfgdffgdfdg
 # grasp plan
 set(libgrasp_plan "grasp_plan")
 add_library(${libgrasp_plan} SHARED
