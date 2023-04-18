@@ -83,6 +83,7 @@ include_directories(
   ${gpg_INCLUDE_DIRS}
   ${gpd_INCLUDE_DIRS}
   ${VTK_USE_FILE}
+  ${VTK_INCLUDE_DIRS}
 )
 
 # create ament index resource which references the libraries in the binary dir
